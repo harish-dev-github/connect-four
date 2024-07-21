@@ -59,9 +59,9 @@ public class ConnectFourTests
         
         errors.Should().Contain("Invalid_Position");
     }
-
+    
     [Fact]
-    public void Given_StartedGame_When_WinningMoveExecuted_Then_GameEndedEventAndState()
+    public void When_WinningMoveExecuted_Horizontally_Then_GameEndedEventAndState()
     {
         (GameState gameState, ImmutableArray<IGameEvent> events, ImmutableArray<string> errors) =
             Play(6, 7,
@@ -74,6 +74,58 @@ public class ConnectFourTests
                 (Player.One, 0, 3));
         events.Should().ContainSingle(x => x is GameEnded);
         gameState.Status.Should().Be(GameStatus.Ended);
+        gameState.Winner.Should().Be(Player.One);
+    }
+
+    [Fact]
+    public void When_WinningMoveExecuted_Vertically_Then_GameEndedEventAndState()
+    {
+        (GameState gameState, ImmutableArray<IGameEvent> events, ImmutableArray<string> errors) =
+            Play(6, 7,
+                (Player.One, 0, 0),
+                (Player.Two, 3, 1),
+                (Player.One, 1, 0),
+                (Player.Two, 5, 2),
+                (Player.One, 2, 0),
+                (Player.Two, 3, 3),
+                (Player.One, 3, 0));
+        events.Should().ContainSingle(x => x is GameEnded);
+        gameState.Status.Should().Be(GameStatus.Ended);
+        gameState.Winner.Should().Be(Player.One);
+    }
+    
+    [Fact]
+    public void When_WinningMoveExecuted_DiagonallyRight_Then_GameEndedEventAndState()
+    {
+        (GameState gameState, ImmutableArray<IGameEvent> events, ImmutableArray<string> errors) =
+            Play(6, 7,
+                (Player.One, 0, 0),
+                (Player.Two, 3, 1),
+                (Player.One, 1, 1),
+                (Player.Two, 5, 2),
+                (Player.One, 2, 2),
+                (Player.Two, 3, 4),
+                (Player.One, 3, 3));
+        events.Should().ContainSingle(x => x is GameEnded);
+        gameState.Status.Should().Be(GameStatus.Ended);
+        gameState.Winner.Should().Be(Player.One);
+    }
+    
+    [Fact]
+    public void When_WinningMoveExecuted_DiagonallyLeft_Then_GameEndedEventAndState()
+    {
+        (GameState gameState, ImmutableArray<IGameEvent> events, ImmutableArray<string> errors) =
+            Play(6, 7,
+                (Player.One, 0, 6),
+                (Player.Two, 3, 1),
+                (Player.One, 1, 5),
+                (Player.Two, 5, 2),
+                (Player.One, 2, 4),
+                (Player.Two, 3, 4),
+                (Player.One, 3, 3));
+        events.Should().ContainSingle(x => x is GameEnded);
+        gameState.Status.Should().Be(GameStatus.Ended);
+        gameState.Winner.Should().Be(Player.One);
     }
 
     [Fact]
