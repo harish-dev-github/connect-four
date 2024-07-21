@@ -16,4 +16,7 @@
       <ProjectReference Include="..\ConnectFour\ConnectFour.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+        <InternalsVisibleTo Include="ConnectFour.Tests" />
+    </ItemGroup>
 </Project>
