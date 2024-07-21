@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <InternalsVisibleTo Include="ConnectFour.Api" />
         <InternalsVisibleTo Include="ConnectFour.Tests" />
     </ItemGroup>
 

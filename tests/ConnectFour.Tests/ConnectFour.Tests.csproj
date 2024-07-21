@@ -24,6 +24,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\src\ConnectFour.Api\ConnectFour.Api.csproj" />
       <ProjectReference Include="..\..\src\ConnectFour\ConnectFour.csproj" />
     </ItemGroup>
 

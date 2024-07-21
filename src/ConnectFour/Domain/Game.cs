@@ -16,7 +16,7 @@ internal static class Game
     public static IValidated<ImmutableArray<IGameEvent>> ExecuteCommand(GameState currentState, IGameCommand gameCommand) =>
         gameCommand switch
         {
-            InitializeGame initialize => Successful(new GameInitialized(currentState.GameId, new Grid(initialize.Rows, initialize.Columns))),
+            InitializeGame initialize => Successful(new GameInitialized(currentState.Id, new Grid(initialize.Rows, initialize.Columns))),
             TakeTurn takeTurn when currentState.Status == GameStatus.Ended => Failure("Game_Already_Ended"),
             TakeTurn takeTurn when currentState.NextPlayer != takeTurn.Player => Failure("Invalid_Player"),
             TakeTurn takeTurn when takeTurn.Position.Row < 0 || takeTurn.Position.Row >= currentState.Grid.Rows => Failure("Invalid_Row"),

@@ -1,3 +1,3 @@
 ﻿namespace ConnectFour;
 
-public record GameInitialized(GameId Id, Grid Grid) : IGameEvent;
+public record GameInitialized(string Id, Grid Grid) : IGameEvent;

@@ -11,8 +11,8 @@ public class ConnectFourTests
     {
         (GameState gameState, ImmutableArray<IGameEvent> events, ImmutableArray<string> errors) = ExecuteMultipleCommandsUntilFailure(new InitializeGame(6, 7));
         
-        gameState.GameId.Should().NotBeNull();
-        gameState.GameId.Should().NotBe(string.Empty);
+        gameState.Id.Should().NotBeNull();
+        gameState.Id.Should().NotBe(string.Empty);
         gameState.Grid.Rows.Should().Be(6);
         gameState.Grid.Columns.Should().Be(7);
         gameState.Grid.PlayerPositions.SelectMany(x => x).Should().AllSatisfy(p => p.Should().BeEquivalentTo(

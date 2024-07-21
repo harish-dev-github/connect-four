@@ -1,7 +1,7 @@
 ﻿namespace ConnectFour;
 
 internal record GameState(
-    GameId GameId,
+    string Id,
     Grid Grid,
     GameStatus Status,
     Player NextPlayer,

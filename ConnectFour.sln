@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectFour", "src\ConnectF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectFour.Tests", "tests\ConnectFour.Tests\ConnectFour.Tests.csproj", "{E97E6EE3-D8A7-4F5E-A840-5AE1F5437814}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectFour.Api", "src\ConnectFour.Api\ConnectFour.Api.csproj", "{823CEC07-ADE9-4571-947C-E1AD3618A611}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -16,6 +18,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{BEFE13DF-4AFE-4EF2-A333-3B9FAE947AFD} = {A68EF958-4570-45AF-9DBE-91BC0C9C6ACC}
 		{E97E6EE3-D8A7-4F5E-A840-5AE1F5437814} = {3338B5DD-A088-4206-8DB8-FF85535452ED}
+		{823CEC07-ADE9-4571-947C-E1AD3618A611} = {A68EF958-4570-45AF-9DBE-91BC0C9C6ACC}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BEFE13DF-4AFE-4EF2-A333-3B9FAE947AFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -26,5 +29,9 @@ Global
 		{E97E6EE3-D8A7-4F5E-A840-5AE1F5437814}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E97E6EE3-D8A7-4F5E-A840-5AE1F5437814}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E97E6EE3-D8A7-4F5E-A840-5AE1F5437814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{823CEC07-ADE9-4571-947C-E1AD3618A611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{823CEC07-ADE9-4571-947C-E1AD3618A611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{823CEC07-ADE9-4571-947C-E1AD3618A611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{823CEC07-ADE9-4571-947C-E1AD3618A611}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
